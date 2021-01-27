@@ -2,6 +2,19 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.2.0.
 
+Built with following command
+`ng new fortune-poems --routing`
+
+new project setup modules
+```
+# Enable gesture for site
+npm install --save hammerjs
+
+# Install flexible layout module
+npm install @angular/flex-layout@latest --save
+
+```
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
