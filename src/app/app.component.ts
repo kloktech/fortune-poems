@@ -7,5 +7,5 @@ import 'hammerjs';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'Fortune Poems';
+  title = '觀音感應籤';
 }
