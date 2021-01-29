@@ -1,15 +1,38 @@
 <div fxLayout="column"
-   fxLayoutGap="1em"
-   fxLayoutAlign="top center">
-  <div >
-    <img src="assets/bodhisava.jpg" width="200em">
+   fxLayoutAlign="center center" class=container>
+  <div>
+    <img src="assets/bodhisava.jpg" width="300em">
   </div>
   <div>
     <h1>觀音感應籤</h1>
   </div>
   <div fxLayout="row" fxLayoutAlign="center center">
-    <div fxFlex="70%" style="align-content: flex-start;">
-      觀世音菩薩三十二感應課偈
+    <div fxFlex="40%" >
+      <pre>
+觀音課簡易方便，只需占卜者至心誠懇、一心稱念菩薩聖號。
+
+至誠感召，觀音菩薩慈悲加被，使得占卜者對未決疑之事，
+可一目了然做出判斷。從而趨吉避凶，吉祥如意。
+
+此法門實是菩薩大慈大悲，俯順世情，以期同種善根之妙方便。
+
+方法</pre>
+      <ol>
+        <li>心中默禱所問之事，頌下列之偈
+          紫金化身千百億 白衣妙相三十二
+          稽首圓通自在尊 沙界咸稱大悲主
+        至心念七遍： 南無大慈大悲觀世音菩薩</li>
+        <li>
+          心中默念： <b>弟子(某某)，所求(某事)，未決憂疑。
+          即於三十二課內，欲占一課。勿順人情，願垂感應！</b>
+        </li>
+        <li>
+          點擊下面紅鈕，搖出一支籤，領取籤詩
+        </li>
+      </ol>
+    </div>
+    </div>
+      <!-- 觀世音菩薩三十二感應課偈
       昔日唐三藏詣西天取經，值觀世音菩薩曰：汝往西天求教，道途兇惡，緣汝能辦。
       吾助汝三十二感應靈通之卦，日傳一課，便見當日前途吉凶，禍福無不應者。
       欲叩，焚香祝禱，用淨錢五文，於香煙上度過，手內擎搖。禱祝偈曰：
@@ -19,43 +42,45 @@
       至心念七遍，或三七遍，或一百八遍。
       叩而念：
       <b>願賜證明，今虔祈禱：弟子(某某)，所求(某事)，未決憂疑。
-      即於三十二課內，欲占一課。勿順人情，願垂感應！</b>
-    </div>
-  </div>
+      即於三十二課內，欲占一課。勿順人情，願垂感應！</b> -->
 
-  <div *ngIf="!shaker && !number_shown">
-    <button mat-fab color="accent" (click)="startShaker()">
-      <mat-icon>pages</mat-icon>
-    </button>
-  </div>
-
-  <div *ngIf="shaker && !number_shown">
-    <img src="assets/PoeBox.gif" width="100em">
-  </div>
-
-  <div *ngIf="!shaker && number_shown">
-    <mat-card class="poem-card">
-      <mat-card-header>
-        <div mat-card-avatar><button mat-mini-fab>{{poem_id}}</button></div>
-        <mat-card-title>《{{chosen_poem.name}}》</mat-card-title>
-        <mat-card-subtitle>{{chosen_poem.element}}</mat-card-subtitle>
-      </mat-card-header>
-      <div style="text-align: center">
-        <img mat-card-image src="assets/poem_pics/{{poem_id}}.png" width="300em">
+      <div *ngIf="!shaker && !number_shown">
+        <button mat-fab color="accent" (click)="startShaker()">
+          <mat-icon>pages</mat-icon>
+        </button>
       </div>
-      <mat-card-content>
-        <p>
-          {{chosen_poem.poem}}
-        </p>
-        <p>
-          {{chosen_poem.description}}
-        </p>
-      </mat-card-content>
-      <!-- <mat-card-actions>
-        <button mat-button>LIKE</button>
-        <button mat-button>SHARE</button>
-      </mat-card-actions> -->
-    </mat-card>
-  </div>
+
+      <div *ngIf="shaker && !number_shown">
+        <img src="assets/PoeBox.gif" width="100em">
+      </div>
+
+      <div *ngIf="!shaker && number_shown" class=show-poem-card>
+        <mat-card class="poem-card">
+          <mat-card-header>
+            <div mat-card-avatar><button mat-mini-fab>{{poem_id}}</button></div>
+            <mat-card-title>《{{chosen_poem.name}}》</mat-card-title>
+            <mat-card-subtitle>{{chosen_poem.element}}</mat-card-subtitle>
+          </mat-card-header>
+          <div style="text-align: center">
+            <img mat-card-image src="assets/poem_pics/{{poem_id}}.png" width="300em">
+          </div>
+          <mat-card-content>
+            <p>
+              {{chosen_poem.poem}}
+            </p>
+            <p>
+              {{chosen_poem.description}}
+            </p>
+          </mat-card-content>
+          <mat-card-actions>
+            <button mat-button color="accent" (click)="resetShaker()">我還想問</button>
+          </mat-card-actions>
+        </mat-card>
+      </div>
+
+
+
+
+
 
 </div>

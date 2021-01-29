@@ -35,6 +35,15 @@ Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.
 
 Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
 
+## Deployment
+
+### Production
+Used `ng add angular-cli-ghpages` to add function to publish to github pages, branch ghpages and run
+`ng deploy --cname fortune-poems.bwnc.org` to deploy to github page
+
+Make sure to enable "Enforce HTTPS" for better security.
+
+
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.

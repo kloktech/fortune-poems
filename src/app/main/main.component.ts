@@ -35,9 +35,13 @@ export class MainComponent implements OnInit {
         this.poem_id = Math.floor((Math.random() * 32) + 1);
         // this.poem_id = 32;
         this.chosen_poem = this.poems[this.poem_id - 1];
-    }, 500);
+    }, Math.floor((Math.random() * 3) + 1) * 1000);
   }
 
+  resetShaker() {
+    this.shaker = false;
+    this.number_shown = false;
+  }
 
 
 }
