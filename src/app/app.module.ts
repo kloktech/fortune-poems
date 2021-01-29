@@ -8,11 +8,13 @@ import { MainComponent } from './main/main.component';
 import { MaterialModule } from './material.module';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { HttpClientModule } from '@angular/common/http';
+import { ConsultComponent } from './consult/consult.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    MainComponent
+    MainComponent,
+    ConsultComponent
   ],
   imports: [
     BrowserModule,

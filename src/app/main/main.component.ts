@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
+import { ConsultComponent } from '../consult/consult.component';
 
 @Component({
   selector: 'app-main',
@@ -15,12 +17,15 @@ export class MainComponent implements OnInit {
   poems: any;
   chosen_poem: any;
 
-  constructor(private http: HttpClient) {
+  constructor(
+    private http: HttpClient,
+    public dialog: MatDialog,
+  ) {
     // load fortune poem into variables
     this.http.get('assets/poems.json').subscribe((res) => {
       this.poems = res;
-      console.log('--- result :: ',  this.poems);
     });
+
   }
 
   ngOnInit(): void {
@@ -43,5 +48,14 @@ export class MainComponent implements OnInit {
     this.number_shown = false;
   }
 
+  goToLink(url: string) {
+    window.open(url);
+  }
 
+  openConsultDialog() {
+    const dialogRef = this.dialog.open(ConsultComponent, {
+      width: '600px',
+      data: {}
+    });
+  }
 }
