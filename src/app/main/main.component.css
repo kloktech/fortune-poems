@@ -1,11 +1,23 @@
 .container {
   /* background-image: url("../../assets/bodhisava.jpg");
   color: #fafafa; */
+  width: 100%;
+  /* margin: 1em; */
+}
+
+/* Set img inside header to grow and shrink depends on parent size */
+.header img {
+  height: 100%;
+  width: 100%;
+}
+
+.intro {
+  margin: 10px;
 }
 
 .poem-card {
   max-width: 400px;
-  background-color: #ffe6b3;
+  background-color: #ffdd99;
 }
 
 .poem-card img{

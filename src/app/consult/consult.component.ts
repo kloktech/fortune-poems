@@ -15,4 +15,7 @@ export class ConsultComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  // closeDialog() {
+  //   this.dialog.close();
+  // }
 }

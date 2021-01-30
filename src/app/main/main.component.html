@@ -1,16 +1,15 @@
-<div fxLayout="column"
-  fxLayoutGap="0em"
-  fxLayoutAlign="center center" class=container>
-  <div>
-    <img src="assets/bodhisava.jpg" width="300em">
+<div fxLayout="row" fxLayout.lt-sm="column"
+  fxLayoutGap="1em" fxLayoutGap.lt-sm="1em"
+  fxLayoutAlign="start start" class=container>
+
+  <div fxFlex="50" fxFlex.lt-sm="0 100 100%" class="header">
+    <img src="assets/bodhisava-3.png" >
   </div>
-  <div>
-    <h1>觀音感應籤</h1>
-  </div>
-  <div fxLayout="row" fxLayoutAlign="center center">
-    <div fxFlex="70%" >
+
+    <div fxFlex="0 0 calc(50%-50px)" fxFlex.lt-sm="100px" class="intro">
+      <div style="text-align: center;"><h1>觀音感應籤</h1></div>
       <p>
-        觀音課簡易方便，只需占卜者至心誠懇、一心稱念菩薩聖號。<br/>
+        觀音課簡易方便，只需占卜者至心誠懇、一心稱念菩薩聖號。
         至誠感召，觀音菩薩慈悲加被，使得占卜者對未決疑之事
         可一目了然做出判斷。從而趨吉避凶，吉祥如意。<br/>
         此法門實是菩薩大慈大悲，俯順世情，以期同種善根之妙方便。<br/>
@@ -28,45 +27,45 @@
           點擊下面紅鈕，搖出一支籤，領取籤詩
         </li>
       </ol>
-    </div>
-  </div>
 
-  <div fxLayout="row" fxLayoutAlign="center center">
 
-  <div *ngIf="!shaker && !number_shown">
-    <button mat-fab color="accent" (click)="startShaker()">
-      <mat-icon>pages</mat-icon>
-    </button>
-  </div>
+    <div fxLayout="row" fxLayoutAlign="center center">
 
-  <div *ngIf="shaker && !number_shown">
-    <img src="assets/PoeBox.gif" width="100em">
-  </div>
-
-  <div *ngIf="!shaker && number_shown" class=show-poem-card>
-    <mat-card class="poem-card">
-      <mat-card-header>
-        <div mat-card-avatar><button mat-mini-fab>{{poem_id}}</button></div>
-        <mat-card-title>《{{chosen_poem.name}}》</mat-card-title>
-        <mat-card-subtitle>{{chosen_poem.element}}</mat-card-subtitle>
-      </mat-card-header>
-      <div style="text-align: center">
-        <img mat-card-image src="assets/poem_pics/{{poem_id}}.png" width="300em">
+      <div *ngIf="!shaker && !number_shown">
+        <button mat-fab color="accent" (click)="startShaker()">
+          <mat-icon>pages</mat-icon>
+        </button>
       </div>
-      <mat-card-content>
-        <p>
-          {{chosen_poem.poem}}
-        </p>
-        <p>
-          {{chosen_poem.description}}
-        </p>
-      </mat-card-content>
-      <mat-card-actions>
-        <button *ngIf="chosen_poem.rating < 5" mat-button color="accent" (click)="goToLink('https://www.bwpublish.com/random-quote/')">下下籤? 可請高人指點</button>
-        <button mat-button color="accent" (click)="resetShaker()">我還想問</button>
-        <button mat-button color="accent" (click)="openConsultDialog()">需要解籤？</button>
-      </mat-card-actions>
-    </mat-card>
+
+      <div *ngIf="shaker && !number_shown">
+        <img src="assets/PoeBox.gif" width="100em">
+      </div>
+
+      <div *ngIf="!shaker && number_shown" class=show-poem-card>
+        <mat-card class="poem-card">
+          <mat-card-header>
+            <div mat-card-avatar><button mat-mini-fab>{{poem_id}}</button></div>
+            <mat-card-title>《{{chosen_poem.name}}》</mat-card-title>
+            <mat-card-subtitle>{{chosen_poem.element}}</mat-card-subtitle>
+          </mat-card-header>
+          <div style="text-align: center">
+            <img mat-card-image src="assets/poem_pics/{{poem_id}}.png" width="300em">
+          </div>
+          <mat-card-content>
+            <p>
+              {{chosen_poem.poem}}
+            </p>
+            <p>
+              {{chosen_poem.description}}
+            </p>
+          </mat-card-content>
+          <mat-card-actions>
+            <button *ngIf="chosen_poem.rating < 5" mat-button color="accent" (click)="goToLink('https://www.bwpublish.com/random-quote/')">下下籤? 可請高人指點</button>
+            <button mat-button color="accent" (click)="resetShaker()">我還想問</button>
+            <button mat-button color="accent" (click)="openConsultDialog()">需要解籤？</button>
+          </mat-card-actions>
+        </mat-card>
+      </div>
   </div>
-  </div>
+
 </div>

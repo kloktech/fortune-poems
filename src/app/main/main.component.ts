@@ -54,7 +54,7 @@ export class MainComponent implements OnInit {
 
   openConsultDialog() {
     const dialogRef = this.dialog.open(ConsultComponent, {
-      width: '600px',
+      width: '500px',
       data: {}
     });
   }
