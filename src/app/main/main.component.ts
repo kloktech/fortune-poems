@@ -40,7 +40,7 @@ export class MainComponent implements OnInit {
         this.poem_id = Math.floor((Math.random() * 32) + 1);
         // this.poem_id = 32;
         this.chosen_poem = this.poems[this.poem_id - 1];
-    }, Math.floor((Math.random() * 3) + 1) * 1000);
+    }, Math.floor((Math.random() * 3) + 2) * 1000); // minimum of 2 second
   }
 
   resetShaker() {
@@ -50,6 +50,11 @@ export class MainComponent implements OnInit {
 
   goToLink(url: string) {
     window.open(url);
+  }
+
+  goToQuote() {
+    var r = ("00" + Math.floor((Math.random() * 365) + 1)).slice(-3);
+    window.open('https://www.bwpublish.com/random-quote/heart-of-the-hero-' + r + '/');
   }
 
   openConsultDialog() {

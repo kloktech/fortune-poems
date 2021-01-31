@@ -1,24 +1,33 @@
-<div fxLayout="row" fxLayout.lt-sm="column"
-  fxLayoutGap="1em" fxLayoutGap.lt-sm="1em"
-  fxLayoutAlign="start start" class=container>
+<div class="topmenu">
+  北加福智 2021線上新春園遊會 二月十一號
+</div>
 
-  <div fxFlex="50" fxFlex.lt-sm="0 100 100%" class="header">
-    <img src="assets/bodhisava-3.png" >
+<div fxLayout="row" fxLayout.lt-sm="column"
+  fxLayoutGap="0em" fxLayoutGap.lt-sm="0em"
+  fxLayoutAlign="start start" class="container">
+
+  <div fxFlex="50" fxFlex.lt-sm="0 100 100%" class="picture color-change-4x">
+    <img src="assets/bodhisava-3.png" class="puff-in-center">
+    <div fxHide.lt-sm class="bottommenu flip-in-hor-top">
+      Website Copyright © 2020 BWNC.  All rights reserved.
+    </div>
   </div>
 
-    <div fxFlex="0 0 calc(50%-50px)" fxFlex.lt-sm="100px" class="intro">
-      <div style="text-align: center;"><h1>觀音感應籤</h1></div>
+  <div fxLayout="column" fxFlex="0 0 50%" fxFlex.lt-sm="100px" class="scale-in-top">
+    <div style="text-align: center;"><h1>觀音感應籤</h1></div>
+    <div class="intro">
       <p>
         觀音課簡易方便，只需占卜者至心誠懇、一心稱念菩薩聖號。
         至誠感召，觀音菩薩慈悲加被，使得占卜者對未決疑之事
-        可一目了然做出判斷。從而趨吉避凶，吉祥如意。<br/>
-        此法門實是菩薩大慈大悲，俯順世情，以期同種善根之妙方便。<br/>
-        方法</p>
+        可一目了然做出判斷。從而趨吉避凶，吉祥如意。<br/><br/>
+        此法門實是菩薩大慈大悲，俯順世情，以期同種善根之妙方便。
+        方法：</p>
       <ol>
-        <li>心中默禱所問之事，頌下列之偈
-          紫金化身千百億 白衣妙相三十二
-          稽首圓通自在尊 沙界咸稱大悲主
-        至心念七遍： 南無大慈大悲觀世音菩薩</li>
+        <li>心中默禱所問之事</li>
+        <li>頌下列之偈
+          『紫金化身千百億 白衣妙相三十二
+          稽首圓通自在尊 沙界咸稱大悲主』</li>
+        <li>至心念七遍： 『南無大慈大悲觀世音菩薩』</li>
         <li>
           心中默念： <b>弟子(某某)，所求(某事)，未決憂疑。
           即於三十二課內，欲占一課。勿順人情，願垂感應！</b>
@@ -27,22 +36,20 @@
           點擊下面紅鈕，搖出一支籤，領取籤詩
         </li>
       </ol>
-
-
-    <div fxLayout="row" fxLayoutAlign="center center">
-
-      <div *ngIf="!shaker && !number_shown">
+    </div>
+    <div fxLayout="column" fxLayoutAlign="center center">
+      <div *ngIf="!shaker && !number_shown" class="shaker">
         <button mat-fab color="accent" (click)="startShaker()">
           <mat-icon>pages</mat-icon>
         </button>
       </div>
 
       <div *ngIf="shaker && !number_shown">
-        <img src="assets/PoeBox.gif" width="100em">
+        <img src="assets/PoeBox.gif" width="150em">
       </div>
 
-      <div *ngIf="!shaker && number_shown" class=show-poem-card>
-        <mat-card class="poem-card">
+      <div *ngIf="!shaker && number_shown">
+        <mat-card class="poem-card tilt-in-top-1">
           <mat-card-header>
             <div mat-card-avatar><button mat-mini-fab>{{poem_id}}</button></div>
             <mat-card-title>《{{chosen_poem.name}}》</mat-card-title>
@@ -60,12 +67,16 @@
             </p>
           </mat-card-content>
           <mat-card-actions>
-            <button *ngIf="chosen_poem.rating < 5" mat-button color="accent" (click)="goToLink('https://www.bwpublish.com/random-quote/')">下下籤? 可請高人指點</button>
+            <button *ngIf="chosen_poem.rating < 5" mat-button color="accent" (click)="goToQuote()">下下籤? 高人指點</button>
             <button mat-button color="accent" (click)="resetShaker()">我還想問</button>
             <button mat-button color="accent" (click)="openConsultDialog()">需要解籤？</button>
           </mat-card-actions>
         </mat-card>
       </div>
+    </div>
+    <div fxHide.gt-sm class="bottommenu flip-in-hor-top">
+      Website Copyright © 2020 BWNC.  All rights reserved.
+    </div>
   </div>
 
 </div>
