@@ -6,14 +6,14 @@
   fxLayoutGap="0em" fxLayoutGap.lt-sm="0em"
   fxLayoutAlign="start start" class="container">
 
-  <div fxFlex="50" fxFlex.lt-sm="0 100 100%" class="picture color-change-4x">
+  <div fxFlex="60" fxFlex.lt-sm="0 100 100%" class="picture color-change-4x">
     <img src="assets/bodhisava-3.png" class="puff-in-center">
     <div fxHide.lt-sm class="bottommenu flip-in-hor-top">
       Website Copyright © 2021 BWNC.  All rights reserved.
     </div>
   </div>
 
-  <div fxFlex="0 0 50" fxLayout="column" fxFlexFill class="right_column" >
+  <div fxFlex="0 0 40" fxLayout="column" fxFlexFill class="right_column" >
     <div style="text-align: center; margin-top: 5px"><h1>觀音感應籤</h1></div>
     <div *ngIf="!number_shown && !shaker" class="intro">
       <div fxLayout="column" fxLayoutAlign="space-evenly center">
@@ -23,18 +23,18 @@
             至誠感召觀音菩薩慈悲加被，從而趨吉避凶，吉祥如意。<br/>
           </p>
           <p *ngIf="stage == 1">於菩薩像前，心中默禱所問之事</p>
-          <p *ngIf="stage == 2">頌偈: <b>『紫金化身千百億 白衣妙相三十二
-          稽首圓通自在尊 沙界咸稱大悲主』</b></p>
+          <p *ngIf="stage == 2">頌偈: <b>『紫金化身千百億，白衣妙相三十二<br/>
+          稽首圓通自在尊，沙界咸稱大悲主』</b></p>
           <p *ngIf="stage == 3">至心念七遍： <b>『南無大慈大悲觀世音菩薩』</b></p>
           <p *ngIf="stage == 4">心中默念： <b>弟子(某某)，所求(某事)，未決憂疑。
           即於三十二課內，欲占一課。勿順人情，願垂感應！</b></p>
         </div>
-        <div fxFlex>
+        <div>
           <button *ngIf="stage == 0" mat-raised-button color="primary" (click)="nextStage()">開始</button>
-          <button *ngIf="stage == 1" mat-raised-button color="primary" (click)="nextStage()">下一步</button>
-          <button *ngIf="stage == 2" mat-raised-button color="primary" (click)="nextStage()">下一步</button>
-          <button *ngIf="stage == 3" mat-raised-button color="primary" (click)="nextStage()">下一步</button>
-          <button *ngIf="stage == 4" mat-raised-button color="primary" (click)="startShaker()">求籤</button>
+          <button *ngIf="stage == 1" mat-raised-button color="primary" class="fade-in" (click)="nextStage()">下一步</button>
+          <button *ngIf="stage == 2" mat-raised-button color="primary" class="fade-in" (click)="nextStage()">下一步</button>
+          <button *ngIf="stage == 3" mat-raised-button color="primary" class="fade-in" (click)="nextStage()">下一步</button>
+          <button *ngIf="stage == 4" mat-raised-button color="primary" class="fade-in" (click)="startShaker()">求籤</button>
         </div>
       </div>
     </div>
@@ -75,7 +75,7 @@
         </mat-card>
       </div>
     </div>
-    <div fxHide.gt-sm class="bottommenu flip-in-hor-top">
+    <div fxHide.sm fxHide.gt-sm class="bottommenu flip-in-hor-top">
       Website Copyright © 2021 BWNC.  All rights reserved.
     </div>
   </div>

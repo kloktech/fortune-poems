@@ -17,7 +17,7 @@ export class MainComponent implements OnInit {
   poem_id = 0;
   poems: any;
   chosen_poem: any;
-  stage = 4;
+  stage = 0;
 
   constructor(
     private http: HttpClient,
@@ -40,7 +40,7 @@ export class MainComponent implements OnInit {
         this.shaker = false;
         this.number_shown = true;
         this.poem_id = Math.floor((Math.random() * 32) + 1);
-        this.poem_id = 32;
+        // this.poem_id = 32;
         this.chosen_poem = this.poems[this.poem_id - 1];
     }, Math.floor((Math.random() * 3) + 2) * 1000); // minimum of 2 second
   }
@@ -64,7 +64,7 @@ export class MainComponent implements OnInit {
 
   openHeart2HeroDialog() {
     const dialogRef = this.dialog.open(Heart2heroComponent, {
-      width: '500px',
+      width: '600px',
       data: {}
     });
   }
