@@ -9,12 +9,14 @@ import { MaterialModule } from './material.module';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { HttpClientModule } from '@angular/common/http';
 import { ConsultComponent } from './consult/consult.component';
+import { Heart2heroComponent } from './heart2hero/heart2hero.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     MainComponent,
-    ConsultComponent
+    ConsultComponent,
+    Heart2heroComponent
   ],
   imports: [
     BrowserModule,

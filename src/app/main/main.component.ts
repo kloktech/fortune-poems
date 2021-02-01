@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
 import { ConsultComponent } from '../consult/consult.component';
+import { Heart2heroComponent } from '../heart2hero/heart2hero.component';
 
 @Component({
   selector: 'app-main',
@@ -16,6 +17,7 @@ export class MainComponent implements OnInit {
   poem_id = 0;
   poems: any;
   chosen_poem: any;
+  stage = 4;
 
   constructor(
     private http: HttpClient,
@@ -38,7 +40,7 @@ export class MainComponent implements OnInit {
         this.shaker = false;
         this.number_shown = true;
         this.poem_id = Math.floor((Math.random() * 32) + 1);
-        // this.poem_id = 32;
+        this.poem_id = 32;
         this.chosen_poem = this.poems[this.poem_id - 1];
     }, Math.floor((Math.random() * 3) + 2) * 1000); // minimum of 2 second
   }
@@ -46,15 +48,11 @@ export class MainComponent implements OnInit {
   resetShaker() {
     this.shaker = false;
     this.number_shown = false;
+    this.stage = 0;
   }
 
   goToLink(url: string) {
     window.open(url);
-  }
-
-  goToQuote() {
-    var r = ("00" + Math.floor((Math.random() * 365) + 1)).slice(-3);
-    window.open('https://www.bwpublish.com/random-quote/heart-of-the-hero-' + r + '/');
   }
 
   openConsultDialog() {
@@ -62,5 +60,17 @@ export class MainComponent implements OnInit {
       width: '500px',
       data: {}
     });
+  }
+
+  openHeart2HeroDialog() {
+    const dialogRef = this.dialog.open(Heart2heroComponent, {
+      width: '500px',
+      data: {}
+    });
+  }
+
+
+  nextStage() {
+    this.stage += 1;
   }
 }

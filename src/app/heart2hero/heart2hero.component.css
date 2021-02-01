@@ -1,0 +1,9 @@
+.quote {
+  text-align: center;
+  background-color: #eee;
+}
+
+.quote img {
+  width: 100%;
+  height: auto;
+}
