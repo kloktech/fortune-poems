@@ -1,4 +1,9 @@
-# FortunePoems
+# Fortune Poems
+
+Hardest part is making things alight.
+
+Right column has fade in so javascript can wait enough time for the left picture to render, capture its height and apply it to right column.
+
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.2.0.
 

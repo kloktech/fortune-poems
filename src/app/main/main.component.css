@@ -18,12 +18,12 @@
 .bottommenu {
   background-color: #eee;
   text-align: center;
-  padding: 10px;
-  font-size: small;
+  padding: 5px;
+  font-size: x-small;
   color: #888;
 }
 
-.right_column{
+.right_column {
   /* background-color: #ffeecc; */
   /* height: 500px; */
   background-image: url(https://d1942s60hw1xi2.cloudfront.net/images/banner/20170807-bg.png);
@@ -31,13 +31,21 @@
   background-position: center top;
   background-size: initial;
   margin-top: 0px!important;
-  min-height: 100vh;
-  /* min-height: 100%; */
+
+  /* background-image: linear-gradient(0deg,#2dcca7,#3e91cc,#cc6aa5);
+  background-size: 100% 600%; */
+
+  /* min-height: 100vh; */
+  /* min-height: 636px; */
+  /* height: 100%; */
 }
+
 .picture {
   /* background-color: #00e6e6; */
 
   /* box-shadow: 0px 0px 5px #aaa; */
+  background-image: linear-gradient(0deg,#2dcca7,#3e91cc,#cc6aa5);
+  background-size: 100% 600%;
 }
 /* Set img inside header to grow and shrink depends on parent size */
 .picture img {
@@ -46,6 +54,7 @@
   display: block;
   margin: 0;
   padding: 0;
+
 }
 
 .shaker {
@@ -55,10 +64,13 @@
 
 .intro {
   margin: 10px;
+  margin-bottom: 50px;
   font-size: large;
-  line-height: 1.3;
+  line-height: 1.5;
   color: #555;
-  font-family: 'Noto Sans TC', sans-serif;
+  font-family: '標楷體','Noto Sans TC', sans-serif;
+  text-align: center;
+
   /* font-family: "微软雅黑","黑体",serif; */
   /* font-family: "Hiragino Sans GB", "Microsoft YaHei", sans-serif; */
   /* font-family: "Helvetica", "Arial","LiHei Pro","黑體-繁","微軟正黑體", sans-serif; */
@@ -79,8 +91,9 @@ mat-card-actions {
   text-align: center;
 }
 
-li {
-  margin: 5px 0;
+.puff-in-center {
+	-webkit-animation: puff-in-center 1s cubic-bezier(0.470, 0.000, 0.745, 0.715) both;
+	        animation: puff-in-center 1s cubic-bezier(0.470, 0.000, 0.745, 0.715) both;
 }
 
 @-webkit-keyframes puff-in-center {
@@ -116,9 +129,9 @@ li {
   }
 }
 
-.puff-in-center {
-	-webkit-animation: puff-in-center 1.4s cubic-bezier(0.470, 0.000, 0.745, 0.715) both;
-	        animation: puff-in-center 1.4s cubic-bezier(0.470, 0.000, 0.745, 0.715) both;
+.tilt-in-top-1 {
+	-webkit-animation: tilt-in-top-1 2.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) 0.5s both;
+	        animation: tilt-in-top-1 2.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) 0.5s both;
 }
 
 @-webkit-keyframes tilt-in-top-1 {
@@ -146,85 +159,31 @@ li {
   }
 }
 
-.tilt-in-top-1 {
-	-webkit-animation: tilt-in-top-1 3s cubic-bezier(0.250, 0.460, 0.450, 0.940) 0.5s both;
-	        animation: tilt-in-top-1 3s cubic-bezier(0.250, 0.460, 0.450, 0.940) 0.5s both;
-}
-
-.scale-in-top {
-	-webkit-animation: scale-in-top 1.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) 1.4s both;
-	        animation: scale-in-top 1.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) 1.4s both;
-}
-@-webkit-keyframes scale-in-top {
-  0% {
-    -webkit-transform: scale(0);
-            transform: scale(0);
-    -webkit-transform-origin: 50% 0%;
-            transform-origin: 50% 0%;
-    opacity: 1;
-  }
-  100% {
-    -webkit-transform: scale(1);
-            transform: scale(1);
-    -webkit-transform-origin: 50% 0%;
-            transform-origin: 50% 0%;
-    opacity: 1;
-  }
-}
-@keyframes scale-in-top {
-  0% {
-    -webkit-transform: scale(0);
-            transform: scale(0);
-    -webkit-transform-origin: 50% 0%;
-            transform-origin: 50% 0%;
-    opacity: 1;
-  }
-  100% {
-    -webkit-transform: scale(1);
-            transform: scale(1);
-    -webkit-transform-origin: 50% 0%;
-            transform-origin: 50% 0%;
-    opacity: 1;
-  }
-}
-
-.color-change-4x {
+.color-change-2x {
 	-webkit-animation: color-change-4x 8s linear 1.5s infinite alternate both;
 	        animation: color-change-4x 8s linear 1.5s infinite alternate both;
 }
 
-@-webkit-keyframes color-change-4x {
+@-webkit-keyframes color-change-2x {
   0% {
-    background: #ffffff;
+    background: #99bbff;
   }
-  /* 33.3333% {
-    background: #19dcea;
-  }
-  66.666% {
-    background: #ea2222;
-  } */
   100% {
-    background: #00e9e9;
+    background: #0055ff;
   }
 }
-@keyframes color-change-4x {
+@keyframes color-change-2x {
   0% {
-    background: #ffffff;
+    background: #0055ff;
   }
-  /* 33.3333% {
-    background: #19dcea;
-  }
-  66.666% {
-    background: #ea2222;
-  } */
   100% {
-    background: #00e9e9;
+    background: #ff9933;
   }
 }
 
 .flip-in-hor-top {
-	-webkit-animation: flip-in-hor-top 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) 2s both;
-	        animation: flip-in-hor-top 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) 2s both;
+	-webkit-animation: flip-in-hor-top 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) 1.5s both;
+	        animation: flip-in-hor-top 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) 1.5s both;
 }
 
 @-webkit-keyframes flip-in-hor-top {
@@ -253,8 +212,8 @@ li {
 }
 
 .fade-in {
-	-webkit-animation: fade-in 2s cubic-bezier(0.390, 0.575, 0.565, 1.000) 1s both;
-	        animation: fade-in 2s cubic-bezier(0.390, 0.575, 0.565, 1.000) 1s both;
+	-webkit-animation: fade-in 2s cubic-bezier(0.390, 0.575, 0.565, 1.000) 0s both;
+	        animation: fade-in 2s cubic-bezier(0.390, 0.575, 0.565, 1.000) 0s both;
 }
 
 @-webkit-keyframes fade-in {
@@ -271,5 +230,27 @@ li {
   }
   100% {
     opacity: 1;
+  }
+}
+
+.bg-pan-bottom {
+	-webkit-animation: bg-pan-bottom 30s both;
+	        animation: bg-pan-bottom 30s both;
+}
+
+@-webkit-keyframes bg-pan-bottom {
+  0% {
+    background-position: 50% 0%;
+  }
+  100% {
+    background-position: 50% 100%;
+  }
+}
+@keyframes bg-pan-bottom {
+  0% {
+    background-position: 50% 0%;
+  }
+  100% {
+    background-position: 50% 100%;
   }
 }

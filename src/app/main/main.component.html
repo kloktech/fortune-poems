@@ -1,83 +1,87 @@
-<!-- <div class="topmenu">
-  北加福智 線上新春園遊會 二月十三號
-</div> -->
 
-<div fxLayout="row" fxLayout.lt-sm="column"
+
+<div fxLayout="column"
   fxLayoutGap="0em" fxLayoutGap.lt-sm="0em"
-  fxLayoutAlign="start start" class="container">
-
-  <div fxFlex="60" fxFlex.lt-sm="0 100 100%" class="picture color-change-4x">
-    <img src="assets/bodhisava-3.png" class="puff-in-center">
-    <div fxHide.lt-sm class="bottommenu flip-in-hor-top">
-      Website Copyright © 2021 BWNC.  All rights reserved.
-    </div>
+  fxLayoutAlign="start center" class="container" myMatchHeight="left_column">
+  <div class="topmenu" fxFlexFill>
+    觀音感應籤 北加福智 雲遊會 二月十三號
   </div>
-
-  <div fxFlex="0 0 40" fxLayout="column" fxFlexFill class="right_column" >
-    <div style="text-align: center; margin-top: 5px"><h1>觀音感應籤</h1></div>
-    <div *ngIf="!number_shown && !shaker" class="intro">
-      <div fxLayout="column" fxLayoutAlign="space-evenly center">
-        <div style="height: 80px">
-          <p *ngIf="stage == 0" >
-            占卜者至心誠懇、一心稱念菩薩聖號。
-            至誠感召觀音菩薩慈悲加被，從而趨吉避凶，吉祥如意。<br/>
-          </p>
-          <p *ngIf="stage == 1">於菩薩像前，心中默禱所問之事</p>
-          <p *ngIf="stage == 2">頌偈: <b>『紫金化身千百億，白衣妙相三十二<br/>
-          稽首圓通自在尊，沙界咸稱大悲主』</b></p>
-          <p *ngIf="stage == 3">至心念七遍： <b>『南無大慈大悲觀世音菩薩』</b></p>
-          <p *ngIf="stage == 4">心中默念： <b>弟子(某某)，所求(某事)，未決憂疑。
-          即於三十二課內，欲占一課。勿順人情，願垂感應！</b></p>
-        </div>
-        <div>
-          <button *ngIf="stage == 0" mat-raised-button color="primary" (click)="nextStage()">開始</button>
-          <button *ngIf="stage == 1" mat-raised-button color="primary" class="fade-in" (click)="nextStage()">下一步</button>
-          <button *ngIf="stage == 2" mat-raised-button color="primary" class="fade-in" (click)="nextStage()">下一步</button>
-          <button *ngIf="stage == 3" mat-raised-button color="primary" class="fade-in" (click)="nextStage()">下一步</button>
-          <button *ngIf="stage == 4" mat-raised-button color="primary" class="fade-in" (click)="startShaker()">求籤</button>
-        </div>
+  <div fxLayout="row" fxLayout.lt-sm="column" fxFlexFill>
+    <div class="left_column fade-in" fxFlex="50" fxFlex.lt-sm="0 100 100%">
+      <div class="picture bg-pan-bottom">
+        <img src="assets/bodhisava-3.png">
       </div>
-    </div>
-    <div fxLayoutAlign="center center">
-      <!-- <div *ngIf="!shaker && !number_shown" class="shaker">
-        <button mat-fab color="accent" (click)="startShaker()">
-          <mat-icon>pages</mat-icon>
-        </button>
+      <!-- <div fxHide.lt-sm class="bottommenu">
+        Copyright © 2021 BWNC.  All rights reserved.
       </div> -->
-
-      <div *ngIf="shaker && !number_shown">
-        <img src="assets/PoeBox.gif" width="150em">
-      </div>
-
-      <div *ngIf="!shaker && number_shown">
-        <mat-card class="poem-card tilt-in-top-1">
-          <mat-card-header>
-            <div mat-card-avatar><button mat-mini-fab>{{poem_id}}</button></div>
-            <mat-card-title>《{{chosen_poem.name}}》</mat-card-title>
-            <mat-card-subtitle>{{chosen_poem.element}}</mat-card-subtitle>
-          </mat-card-header>
-          <div style="text-align: center">
-            <img mat-card-image src="assets/poem_pics/{{poem_id}}.png" width="300em">
-          </div>
-          <mat-card-content>
-            <p>
-              {{chosen_poem.poem}}
-            </p>
-            <p>
-              {{chosen_poem.description}}
-            </p>
-          </mat-card-content>
-          <mat-card-actions>
-            <button *ngIf="chosen_poem.rating < 5" mat-button color="accent" (click)="openHeart2HeroDialog()">下下籤? 高人指點</button>
-            <button mat-button color="accent" (click)="resetShaker()">我還想問</button>
-            <button mat-button color="accent" (click)="openConsultDialog()">需要解籤？</button>
-          </mat-card-actions>
-        </mat-card>
-      </div>
     </div>
-    <div fxHide.sm fxHide.gt-sm class="bottommenu flip-in-hor-top">
-      Website Copyright © 2021 BWNC.  All rights reserved.
+
+    <div fxFlex="grow" fxLayout="column" fxLayoutAlign="center center" fxFlexFill class="right_column puff-in-center">
+      <div *ngIf="!number_shown && !shaker" class="intro" ngStyle.gt-sm="font-size: x-large;">
+        <div fxLayout="column" fxFlexFill fxLayoutAlign="center center">
+          <div style="height: 120px" ngStyle.gt-sm="height: 150px;">
+            <p *ngIf="stage == 0" >
+              占卜者至心誠懇、一心稱念菩薩聖號<br/>
+              至誠感召觀音菩薩慈悲加被<br/>從而趨吉避凶，吉祥如意<br/>
+            </p>
+            <p *ngIf="stage == 1">於菩薩像前，心中默禱所問之事</p>
+            <p *ngIf="stage == 2">頌偈: <br/><b>紫金化身千百億，白衣妙相三十二<br/>
+            稽首圓通自在尊，沙界咸稱大悲主</b></p>
+            <p *ngIf="stage == 3">至心念七遍：<br/><b>南無大慈大悲觀世音菩薩</b></p>
+            <p *ngIf="stage == 4">心中默念： <br/><b>弟子(某某)，所求(某事)，未決憂疑。<br/>
+            即於三十二課內，欲占一課。<br/>勿順人情，願垂感應！</b></p>
+          </div>
+          <div>
+            <button *ngIf="stage == 0" mat-raised-button color="primary" (click)="nextStage()">開始</button>
+            <button *ngIf="stage == 1" mat-raised-button color="primary" class="fade-in" (click)="nextStage()">下一步</button>
+            <button *ngIf="stage == 2" mat-raised-button color="primary" class="fade-in" (click)="nextStage()">下一步</button>
+            <button *ngIf="stage == 3" mat-raised-button color="primary" class="fade-in" (click)="nextStage()">下一步</button>
+            <button *ngIf="stage == 4" mat-raised-button color="primary" class="fade-in" (click)="startShaker()">求籤</button>
+          </div>
+        </div>
+      </div>
+      <div fxLayoutAlign="center center">
+        <!-- <div *ngIf="!shaker && !number_shown" class="shaker">
+          <button mat-fab color="accent" (click)="startShaker()">
+            <mat-icon>pages</mat-icon>
+          </button>
+        </div> -->
+
+        <div *ngIf="shaker && !number_shown" style="margin-top: 30px">
+          <img src="assets/PoeBox.gif" width="150em">
+        </div>
+
+        <div *ngIf="!shaker && number_shown">
+          <mat-card class="poem-card tilt-in-top-1">
+            <mat-card-header>
+              <div mat-card-avatar><button mat-mini-fab>{{poem_id}}</button></div>
+              <mat-card-title>《{{chosen_poem.name}}》</mat-card-title>
+              <mat-card-subtitle>{{chosen_poem.element}}</mat-card-subtitle>
+            </mat-card-header>
+            <div style="text-align: center">
+              <img mat-card-image src="assets/poem_pics/{{poem_id}}.png" width="300em">
+            </div>
+            <mat-card-content>
+              <p>
+                {{chosen_poem.poem}}
+              </p>
+              <p>
+                {{chosen_poem.description}}
+              </p>
+            </mat-card-content>
+            <mat-card-actions>
+              <button *ngIf="chosen_poem.rating < 5" mat-button color="accent" (click)="openHeart2HeroDialog()">下下籤? 高人指點</button>
+              <button mat-button color="accent" (click)="resetShaker()">其他問題</button>
+              <button mat-button color="accent" (click)="openConsultDialog()">需要解籤？</button>
+            </mat-card-actions>
+          </mat-card>
+        </div>
+
+      </div>
+
     </div>
   </div>
-
+  <div class="bottommenu flip-in-hor-top" fxFlexFill>
+    Copyright © 2021 BWNC.  All rights reserved.
+  </div>
 </div>

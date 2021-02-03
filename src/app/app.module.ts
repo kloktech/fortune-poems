@@ -10,13 +10,15 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { HttpClientModule } from '@angular/common/http';
 import { ConsultComponent } from './consult/consult.component';
 import { Heart2heroComponent } from './heart2hero/heart2hero.component';
+import { MatchHeightDirective } from './match-height.directive';
 
 @NgModule({
   declarations: [
     AppComponent,
     MainComponent,
     ConsultComponent,
-    Heart2heroComponent
+    Heart2heroComponent,
+    MatchHeightDirective
   ],
   imports: [
     BrowserModule,
