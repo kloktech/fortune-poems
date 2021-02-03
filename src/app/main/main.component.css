@@ -212,8 +212,8 @@ mat-card-actions {
 }
 
 .fade-in {
-	-webkit-animation: fade-in 2s cubic-bezier(0.390, 0.575, 0.565, 1.000) 0s both;
-	        animation: fade-in 2s cubic-bezier(0.390, 0.575, 0.565, 1.000) 0s both;
+	-webkit-animation: fade-in 2s cubic-bezier(0.390, 0.575, 0.565, 1.000) 2s both;
+	        animation: fade-in 2s cubic-bezier(0.390, 0.575, 0.565, 1.000) 2s both;
 }
 
 @-webkit-keyframes fade-in {
@@ -231,6 +231,11 @@ mat-card-actions {
   100% {
     opacity: 1;
   }
+}
+
+.fade-in-left-column {
+	-webkit-animation: fade-in 3s cubic-bezier(0.390, 0.575, 0.565, 1.000) 0s both;
+	        animation: fade-in 3s cubic-bezier(0.390, 0.575, 0.565, 1.000) 0s both;
 }
 
 .bg-pan-bottom {
