@@ -12,6 +12,9 @@ export class MatchHeightDirective implements AfterViewChecked {
     }
 
     ngAfterViewInit() {
+      // Call only the first time view is initated.
+      // Needed to use setTimeout so page has enough time to really initiate everything
+      // in order to pickup column height for left then apply the height to the right.
       setTimeout(()=>{
         this.matchHeight(this.el.nativeElement, 'left_column', 'right_column');
       },300);
