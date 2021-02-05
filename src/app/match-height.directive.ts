@@ -58,7 +58,6 @@ export class MatchHeightDirective implements AfterViewChecked {
       const maxHeight = itemHeights.reduce((prev, curr) => {
           return curr > prev ? curr : prev;
       }, 0);
-      console.log(maxHeight);
 
       // step 3: update all the child elements to the tallest height
       Array.from(targetChildren)
