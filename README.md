@@ -1,5 +1,7 @@
 # Fortune Poems
 
+https://fortune-poems.bwnc.org/
+
 Hardest part is making things alight.
 
 Right column has fade in so javascript can wait enough time for the left picture to render, capture its height and apply it to right column.
